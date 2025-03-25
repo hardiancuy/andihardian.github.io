@@ -12,8 +12,50 @@
             padding: 20px;
             background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: white;
+            transition: margin-left 0.3s;
         }
-        h1, h2 { color: #fff; }
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background: rgba(0, 0, 0, 0.8);
+            padding-top: 60px;
+            transition: 0.3s;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: 0.2s;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .menu-btn {
+            font-size: 24px;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            color: white;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+        .main-content {
+            transition: margin-left 0.3s;
+        }
         section {
             margin: 20px auto;
             max-width: 600px;
@@ -26,41 +68,6 @@
         section:hover {
             transform: scale(1.05);
         }
-        .social a {
-            margin: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #ffeb3b;
-            transition: color 0.3s ease;
-        }
-        .social a:hover {
-            color: #fff;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 5px 0;
-        }
-        footer {
-            margin-top: 30px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-        button {
-            background: #ffeb3b;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 10px;
-            cursor: pointer;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s ease;
-        }
-        button:hover {
-            background: #ffcc00;
-        }
         .profile-img {
             width: 150px;
             height: 150px;
@@ -72,52 +79,67 @@
     </style>
 </head>
 <body>
-    <img src="profile.jpg" alt="Foto Profil" class="profile-img">
+    <button class="menu-btn" onclick="openSidebar()">☰</button>
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSidebar()">×</a>
+        <a href="#profile">Profil</a>
+        <a href="#social">Media Sosial</a>
+        <a href="#education">Pendidikan</a>
+        <a href="#projects">Proyek</a>
+        <a href="#skills">Skillset</a>
+    </div>
     
-    <h1>Andi Hardiansya permana</h1>
-    <p>Alamat: Nongsa | Email: ardihardi57@gmail.com</p>
-    <p>Deskripsi: Saya adalah mahasiswa Teknik Informatika yang tertarik pada Programming dan Data Analyst. Saya aktif mempelajari bahasa pemrograman, teknik analisis data, dan teknologi terbaru untuk meningkatkan efisiensi pemrosesan informasi. Bersemangat menerapkan keterampilan dalam proyek nyata yang berdampak positif. 🚀.</p>
-
-    <section>
-        <h2>Media Sosial</h2>
-        <p class="social">
-            <a href="https://www.linkedin.com/in/andi-hardiansya-permana-5a870a219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a> |
-            <a href="https://github.com/hardiancuy" target="_blank">GitHub</a>
-        </p>
-    </section>
-
-    <section>
-        <h2>Riwayat Pendidikan</h2>
-        <ul>
-            <li>Universitas Politeknik Negeri Batam - Teknik Informatika (2024 - 2025)</li>
-            <li>SMU SMAN 15 Batam - IPS (2021 - 2024)</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Proyek yang Pernah Dikerjakan</h2>
-        <ul>
-            <li><b>Sipelita</b> - Project ini berfokus pada pengembangan aplikasi laporan pertanggungjawaban berbasis web yang dirancang untuk mempermudah proses pencatatan, pelacakan, dan penyajian data secara sistematis, sehingga memudahkan pengguna dalam menyusun laporan yang akurat, transparan, dan dapat diakses kapan saja secara online. </li>
-            <li><b>AMKD</b> - Project ini berfokus pada pengembangan aplikasi peminjaman kendaraan dinas berbasis web yang dirancang untuk mempermudah proses pengelolaan, pemantauan, dan pencatatan peminjaman kendaraan secara efisien, sehingga memastikan transparansi, kemudahan akses, serta optimalisasi penggunaan kendaraan dinas dalam suatu instansi atau organisasi.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Skillset</h2>
-        <ul>
-            <li><b>Programming Languages:</b> HTML, CSS, JavaScript, PHP, </li>
-            <li><b>Tools:</b> Git, VS Code, Figma, Draw.io, Dbdiagram, Xampp</li>
-            <li><b>Soft Skills:</b> Komunikasi, Problem Solving, Manajemen Waktu, Kepemimpinan, Kerja Tim, Kreativitas, Analisis Data, Adaptasi, Pemikiran Kritis, Negosiasi.,</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>© 2025 Andi hardian - Dibuat dengan GitHub Pages</p>
-    </footer>
+    <div class="main-content" id="mainContent">
+        <img src="assets/profile.jpg" alt="Foto Profil" class="profile-img">
+        <h1>Andi Hardiansya Permana</h1>
+        <p>Alamat: Nongsa | Email: ardihardi57@gmail.com</p>
+        <p>Deskripsi: Saya adalah mahasiswa Teknik Informatika yang tertarik pada Programming dan Data Analyst. Saya aktif mempelajari bahasa pemrograman, teknik analisis data, dan teknologi terbaru untuk meningkatkan efisiensi pemrosesan informasi. Bersemangat menerapkan keterampilan dalam proyek nyata yang berdampak positif. 🚀</p>
+        
+        <section id="social">
+            <h2>Media Sosial</h2>
+            <p>
+                <a href="https://www.linkedin.com/in/andi-hardiansya-permana-5a870a219" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/hardiancuy" target="_blank">GitHub</a>
+            </p>
+        </section>
+        
+        <section id="education">
+            <h2>Riwayat Pendidikan</h2>
+            <ul>
+                <li>Politeknik Negeri Batam - Teknik Informatika (2024 - 2025)</li>
+                <li>SMU SMAN 15 Batam - IPS (2021 - 2024)</li>
+            </ul>
+        </section>
+        
+        <section id="projects">
+            <h2>Proyek yang Pernah Dikerjakan</h2>
+            <ul>
+                <li><b>Sipelita</b> - Aplikasi laporan pertanggungjawaban berbasis web.
+                    saya berperan sebagai backend developer yang bertanggung jawab dalam mengelola logika bisnis, pengolahan data, serta pengembangan API untuk memastikan sistem berjalan dengan optimal dan efisien.</li>
+                <li><b>AMKD</b> - Aplikasi peminjaman kendaraan dinas berbasis web.
+                    saya berperan sebagai frontend developer yang bertanggung jawab dalam merancang antarmuka pengguna, memastikan pengalaman pengguna yang responsif, serta mengimplementasikan desain yang intuitif dan mudah digunakan.
+                </li>
+            </ul>
+        </section>
+        
+        <section id="skills">
+            <h2>Skillset</h2>
+            <ul>
+                <li><b>Programming Languages:</b> HTML, CSS, JavaScript, PHP</li>
+                <li><b>Tools:</b> Git, VS Code, Figma, Draw.io, Dbdiagram, Xampp</li>
+                <li><b>Soft Skills:</b> Komunikasi, Problem Solving, Manajemen Waktu, Kepemimpinan</li>
+            </ul>
+        </section>
+    </div>
 
     <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
+        function openSidebar() {
+            document.getElementById("sidebar").style.left = "0";
+            document.getElementById("mainContent").style.marginLeft = "250px";
+        }
+        function closeSidebar() {
+            document.getElementById("sidebar").style.left = "-250px";
+            document.getElementById("mainContent").style.marginLeft = "0";
         }
     </script>
 </body>
