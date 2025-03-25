@@ -3,42 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Branding - Andi Hardiansya Permana</title>
+    <title>Personal Branding - Nama Anda</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            display: flex;
+            text-align: center;
+            padding: 20px;
             background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: white;
-            margin: 0;
         }
-        .sidebar {
-            width: 250px;
-            background: rgba(0, 0, 0, 0.5);
-            height: 100vh;
-            padding: 20px;
-            position: fixed;
-            left: 0;
-            top: 0;
-            transition: transform 0.3s ease-in-out;
-        }
-        .sidebar a {
-            display: block;
-            color: #ffeb3b;
-            text-decoration: none;
-            margin: 15px 0;
-            font-weight: bold;
-        }
-        .sidebar a:hover {
-            color: #fff;
-        }
-        .content {
-            margin-left: 270px;
-            padding: 20px;
-            width: 100%;
-            text-align: center;
-        }
+        h1, h2 { color: #fff; }
         section {
             margin: 20px auto;
             max-width: 600px;
@@ -46,6 +21,45 @@
             padding: 20px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+        }
+        section:hover {
+            transform: scale(1.05);
+        }
+        .social a {
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #ffeb3b;
+            transition: color 0.3s ease;
+        }
+        .social a:hover {
+            color: #fff;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        button {
+            background: #ffeb3b;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #ffcc00;
         }
         .profile-img {
             width: 150px;
@@ -55,117 +69,55 @@
             margin-bottom: 15px;
             border: 4px solid white;
         }
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            color: #ffeb3b;
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            z-index: 1000;
-            border-radius: 5px;
-        }
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: absolute;
-                left: -100%;
-                top: 0;
-                text-align: center;
-                padding: 10px;
-            }
-            .sidebar.open {
-                left: 0;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .content {
-                margin-left: 0;
-                padding: 10px;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+    <img src="assets/profile.jpg" alt="Foto Profil" class="profile-img">
+    
+    <h1>Andi Hardiansya permana</h1>
+    <p>Alamat: Nongsa | Email: ardihardi57@gmail.com</p>
+    <p>Deskripsi: Saya adalah mahasiswa Teknik Informatika yang tertarik pada Programming dan Data Analyst. Saya aktif mempelajari bahasa pemrograman, teknik analisis data, dan teknologi terbaru untuk meningkatkan efisiensi pemrosesan informasi. Bersemangat menerapkan keterampilan dalam proyek nyata yang berdampak positif. 🚀.</p>
 
-    <div class="sidebar" id="sidebar">
-        <a href="#about">Tentang Saya</a>
-        <a href="#social">Media Sosial</a>
-        <a href="#education">Riwayat Pendidikan</a>
-        <a href="#projects">Proyek</a>
-        <a href="#skills">Skillset</a>
-        <a href="#contact">Kontak</a>
-        <a href="#experience">Pengalaman</a>
-    </div>
-
-    <div class="content">
-        <section id="about">
-            <img src="assets/profile.jpg" alt="Foto Profil" class="profile-img">
-            <h1>Andi Hardiansya Permana</h1>
-            <p>Alamat: Nongsa | Email: ardihardi57@gmail.com</p>
-            <p>Saya adalah mahasiswa Teknik Informatika yang tertarik pada Programming dan Data Analyst. Saya memiliki pengalaman dalam pengembangan aplikasi berbasis web dan selalu bersemangat untuk mempelajari teknologi baru serta mengembangkan keterampilan saya di bidang teknologi informasi.</p>
-        </section>
-
-        <section id="social">
-            <h2>Media Sosial</h2>
-            <a href="https://www.linkedin.com/in/andi-hardiansya-permana-5a870a219" target="_blank">LinkedIn</a> |
+    <section>
+        <h2>Media Sosial</h2>
+        <p class="social">
+            <a href="https://www.linkedin.com/in/andi-hardiansya-permana-5a870a219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a> |
             <a href="https://github.com/hardiancuy" target="_blank">GitHub</a>
-        </section>
+        </p>
+    </section>
 
-        <section id="education">
-            <h2>Riwayat Pendidikan</h2>
-            <ul>
-                <li>Universitas Politeknik Negeri Batam - Teknik Informatika (2021 - Sekarang)</li>
-                <li>SMU SMAN 15 Batam - IPS (2018 - 2021)</li>
-            </ul>
-        </section>
+    <section>
+        <h2>Riwayat Pendidikan</h2>
+        <ul>
+            <li>Universitas Politeknik Negeri Batam - Teknik Informatika (2024 - 2025)</li>
+            <li>SMU SMAN 15 Batam - IPS (2021 - 2024)</li>
+        </ul>
+    </section>
 
-        <section id="projects">
-            <h2>Proyek yang Pernah Dikerjakan</h2>
-            <ul>
-                <li><b>Sipelita</b> - Aplikasi laporan pertanggungjawaban berbasis web untuk mempermudah pencatatan dan monitoring laporan keuangan organisasi.</li>
-                <li><b>AMKD</b> - Aplikasi peminjaman kendaraan dinas berbasis web yang memungkinkan pemesanan kendaraan secara online dan memantau status peminjaman.</li>
-            </ul>
-        </section>
+    <section>
+        <h2>Proyek yang Pernah Dikerjakan</h2>
+        <ul>
+            <li><b>Sipelita</b> - Project ini berfokus pada pengembangan aplikasi laporan pertanggungjawaban berbasis web yang dirancang untuk mempermudah proses pencatatan, pelacakan, dan penyajian data secara sistematis, sehingga memudahkan pengguna dalam menyusun laporan yang akurat, transparan, dan dapat diakses kapan saja secara online. </li>
+            <li><b>AMKD</b> - Project ini berfokus pada pengembangan aplikasi peminjaman kendaraan dinas berbasis web yang dirancang untuk mempermudah proses pengelolaan, pemantauan, dan pencatatan peminjaman kendaraan secara efisien, sehingga memastikan transparansi, kemudahan akses, serta optimalisasi penggunaan kendaraan dinas dalam suatu instansi atau organisasi.</li>
+        </ul>
+    </section>
 
-        <section id="skills">
-            <h2>Skillset</h2>
-            <ul>
-                <li><b>Programming:</b> HTML, CSS, JavaScript, PHP</li>
-                <li><b>Tools:</b> Git, VS Code, Figma, Xampp</li>
-                <li><b>Database:</b> MySQL, PostgreSQL</li>
-                <li><b>Soft Skills:</b> Problem Solving, Team Collaboration, Communication</li>
-            </ul>
-        </section>
+    <section>
+        <h2>Skillset</h2>
+        <ul>
+            <li><b>Programming Languages:</b> HTML, CSS, JavaScript, PHP, </li>
+            <li><b>Tools:</b> Git, VS Code, Figma, Draw.io, Dbdiagram, Xampp</li>
+            <li><b>Soft Skills:</b> Komunikasi, Problem Solving, Manajemen Waktu, Kepemimpinan, Kerja Tim, Kreativitas, Analisis Data, Adaptasi, Pemikiran Kritis, Negosiasi.,</li>
+        </ul>
+    </section>
 
-        <section id="contact">
-            <h2>Kontak</h2>
-            <p>Email: ardihardi57@gmail.com</p>
-            <p>Telepon: +62 812-3456-7890</p>
-            <p>Alamat: Nongsa, Batam, Indonesia</p>
-        </section>
-
-        <section id="experience">
-            <h2>Pengalaman</h2>
-            <ul>
-                <li>Magang di PT. Teknologi Nusantara - Backend Developer (2023)</li>
-                <li>Freelance Web Developer - Membuat aplikasi web custom untuk klien</li>
-                <li>Asisten Laboratorium - Membimbing praktikum pemrograman web di kampus</li>
-            </ul>
-        </section>
-    </div>
+    <footer>
+        <p>© 2025 Andi hardian - Dibuat dengan GitHub Pages</p>
+    </footer>
 
     <script>
-        function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('open');
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
         }
     </script>
 </body>
